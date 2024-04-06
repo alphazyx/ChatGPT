@@ -49,7 +49,7 @@ Note: This option is not available to all countries yet. if you are from a count
    ```bash
    git clone https://github.com/alphazyx/ChatGPT.git
    ```
-3. Open `start.bat` (Windows) or `start.sh` (Linux with `bash start.sh` command) to install dependencies and launch the server. On Linux, use `bash start.sh --socks5[=your_proxy_host:your_proxy_port]` to launch the server with socks5 proxy (defaults to localhost:1080).
+3. Open `start.bat` (Windows) or `start.sh` (Linux with `bash start.sh` command) to install dependencies and launch the server. On Linux, use `bash start.sh --socks5[=your_proxy_host:your_proxy_port]` to launch the server with socks5 proxy option (defaults to localhost:1080).
 4. Done, you can connect to your local server's API at:
    ```
    http://localhost:3040/v1/chat/completions
