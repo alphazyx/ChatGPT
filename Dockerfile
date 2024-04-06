@@ -5,7 +5,7 @@ FROM node:19
 WORKDIR /app
 
 # Clone the project repository
-RUN git clone https://github.com/PawanOsman/ChatGPT.git /app
+RUN git clone https://github.com/alphazyx/ChatGPT.git /app
 
 # Install dependencies
 RUN npm install
