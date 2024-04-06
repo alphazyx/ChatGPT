@@ -12,9 +12,11 @@ const apiUrl = `${baseUrl}/backend-api/conversation`;
 const refreshInterval = 60000; // Interval to refresh token in ms
 const errorWait = 120000; // Wait time in ms after an error
 
-const useSocks5Proxy = true; // axios use socks5 proxy
-const proxyOption = { host: '127.0.0.1', port: 1080 }; // socks5 proxy option
-const agent = useSocks5Proxy ? new SocksProxyAgent(`socks5://${proxyOption.host}:${proxyOption.port}`) : new https.Agent({ rejectUnauthorized: false });
+const args = process.argv.slice(2);
+const profileArgSocks5 = args.find((arg) => arg.startsWith("--socks5"));
+const useSocks5Proxy = profileArgSocks5 ? true : false; // axios use socks5 proxy
+const proxyOption = profileArgSocks5 && profileArgSocks5.includes("=") ? profileArgSocks5.split("=")[1] : '127.0.0.1:1080'; // socks5 proxy option
+const agent = useSocks5Proxy ? new SocksProxyAgent(`socks5://${proxyOption}`) : new https.Agent({ rejectUnauthorized: false });
 
 // Initialize global variables to store the session token and device ID
 let token: string;

@@ -6,5 +6,6 @@ if [ ! -d "node_modules" ]; then
 fi
 
 clear
+echo "$@"
 echo "Starting the application..."
-npm start
+npm start -- $@
